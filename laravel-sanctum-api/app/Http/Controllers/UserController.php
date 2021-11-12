@@ -36,7 +36,7 @@ class UserController extends Controller
 
     public function logout(Request $request)
     {
-        auth()->user()->tokens()->delete();
+        $request->user()->tokens()->delete();
 
         return [
             'message' => 'Logged out, token(s) destroyed'
